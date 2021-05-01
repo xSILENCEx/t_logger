@@ -23,8 +23,6 @@ extension LogLevelExtension on LOGLEVEL {
       case LOGLEVEL.ERROR:
         return '[ERROR]   ';
     }
-
-    return '[DEFAULT]   ';
   }
 
   ///获取颜色代码
@@ -39,8 +37,6 @@ extension LogLevelExtension on LOGLEVEL {
       case LOGLEVEL.ERROR:
         return 1;
     }
-
-    return 0;
   }
 }
 
@@ -78,7 +74,7 @@ class TLogger {
   static String _tag = 'DEFAULT';
 
   ///初始化函数
-  static void init({String tag}) {
+  static void init({String? tag}) {
     _tag = tag ?? _tag;
     tInfo(_pic, showPath: false);
   }
